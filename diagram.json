@@ -1,0 +1,51 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-arduino-uno", "id": "uno", "top": 77.4, "left": 57, "attrs": {} },
+      { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -132.9, "left": 207.1, "attrs": {} },
+      { "type": "wokwi-led", "id": "led1", "top": -166.8, "left": 71, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": -166.8,
+        "left": 3.8,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": -91.2,
+        "left": -0.55,
+        "rotate": 90,
+        "attrs": { "value": "1000" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": -91.2,
+        "left": 66.65,
+        "rotate": 90,
+        "attrs": { "value": "1000" }
+      }
+    ],
+    "connections": [
+      [
+        "ultrasonic1:GND",
+        "uno:GND.2",
+        "black",
+        [ "v57.6", "h46.8", "v278.4", "h-124.8", "v-28.7" ]
+      ],
+      [ "ultrasonic1:VCC", "uno:5V", "red", [ "v38.4", "h105.6", "v326.4", "h-167" ] ],
+      [ "ultrasonic1:TRIG", "uno:3", "orange", [ "v0" ] ],
+      [ "ultrasonic1:ECHO", "uno:2", "blue", [ "v0" ] ],
+      [ "led2:A", "r1:1", "green", [ "v0" ] ],
+      [ "led1:A", "r2:1", "#8f4814", [ "v0" ] ],
+      [ "r2:2", "uno:6", "#8f4814", [ "v56.4", "h159.5" ] ],
+      [ "r1:2", "uno:7", "green", [ "v75.6", "h217.2" ] ],
+      [ "led2:C", "uno:GND.1", "black", [ "v182.4", "h154", "v28.8" ] ],
+      [ "led1:C", "uno:GND.1", "black", [ "v163.2", "h86.8" ] ]
+    ],
+    "dependencies": {}
+  }
